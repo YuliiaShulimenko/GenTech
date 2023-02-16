@@ -37,9 +37,9 @@ SELECT users.name, SUM(donations.amount) AS sum
      
  CREATE TABLE users (
     id INTEGER PRIMARY KEY auto_increment,
-    name TEXT NOT NULL,
-    password TEXT NOT NULL,
-    email TEXT NOT NULL,
+    user_name varchar(128 NOT NULL,
+    password varchar(128) NOT NULL,
+    email varchar(128) NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -53,8 +53,8 @@ CREATE TABLE messages (
 
 CREATE TABLE reactions (
     id INTEGER PRIMARY KEY auto_increment,
-    user_id INTEGER NOT NULL,
-    message_id INTEGER NOT NULL,
+    user_id integer,
+    message_id integer,
     type TEXT NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -65,5 +65,5 @@ CREATE TABLE comments (
     id INTEGER PRIMARY KEY auto_increment,
     user_id INTEGER NOT NULL,
     message_id INTEGER NOT NULL,
-    text TEXT NOT NULL,
+    text varchar(255),
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMEST
