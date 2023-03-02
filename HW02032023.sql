@@ -35,12 +35,11 @@ db.transactions.updateOne(
 	{ id: 'data123' },
 	{
 		$set: { done: true },
-	}
-);
+	});
 
 * 4 * Поиск всех транзакций, сумма которых превышает 2000
-db.transactions.find(
-{
+db.transactions.find
+({
 amount: 2000
 })
 
